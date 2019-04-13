@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+  text-align: center;
+
+}
+
+.column img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  height: 100%
+}
+.text-block {
+  position: relative;
+  background-color: black;
+  color: white;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.button {
+  background-color: #ff3300;
+  border: none;
+  color: black;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  top: 90%;
+  left: 85%;
+}
+
+.button:hover {
+  background-color: #ff704d;
+}
+
+</style>
+</head>
+<body bgcolor="#ffa366">
+
+<h2 align="center">Quantity of Food to be prepared :</h2>
+
+<form  action="{{url_for('loginchecker')}}">
+
+
+<div class="row">
+  <div class="column">
+    <img src="https://recipes.timesofindia.com/photo/61203720.cms" alt="Snow" style="width:530px" style="height:340px">
+    <div class="text-block">
+    <p>Chapati : {{session['chapatipredicted']}}</p>
+    </div>
+  </div>
+  <div class="column">
+    <img src="https://www.seriouseats.com/recipes/images/2016/01/20160206-fried-rice-food-lab-68-1500x1125.jpg" alt="Forest" style="width:550px" style="height:600px">
+    <div class="text-block">
+    <p>Rice : {{session['ricepredicted']}}</p>
+    </div>
+  </div>
+  <div class="column">
+    <img src="https://www.cook.recipesandmore.org/wp-content/uploads/2016/10/DalRice-880x485.jpg" alt="Mountains" style="width:600px" style="height:600px">
+    <div class="text-block">
+    <p>Dal : {{session['dalpredicted']}}</p>
+    </div>
+    <!--<button class="button" >Back to HOME</button>-->
+    <button type="submit" class="button" value="Submit">Back to HOME</button>
+
+  </div>
+  <div class="column">
+    <img src="https://images-gmi-pmc.edge-generalmills.com/b6a7c9b7-0af2-4b90-bf3b-51296bb19057.jpg" alt="Mountains" style="width:400px" style="height:400px">
+    <div class="text-block" >
+    <p>Vegetable : {{session['vegetablepredicted']}}</p>
+    </div>
+  </div>
+
+</div>
+
+</form>
+</body>
+</html>

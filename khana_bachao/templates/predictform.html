@@ -1,0 +1,98 @@
+
+<html>
+<head>
+<style>
+.form{  font-family:Arial, Helvetica, sans-serif;
+        position: absolute;
+	    right: 0;
+	    width:40%;
+	    margin: 20px;
+	    max-width: 100px;
+	    padding: 16px;
+	    background-color: white;
+
+}
+font{
+font-family:Arial, Helvetica, sans-serif;
+color:993333;
+font-size: 1.875em;
+}
+h4{
+font-family:Arial, Helvetica, sans-serif;
+color:993333;
+font-size:200%;
+}
+input[type=numeric],select{
+    width: 30%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background:#ddd;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.btn {
+    background-color:663333;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+</style>
+<title>Predictform</title>
+
+</head>
+<body>
+<font>Please provide the following details for predicting the quantity of food you should make</font>
+<form>
+<label><b>Time slot:</b></label><br>
+<select placeholder='timeslot' name:'ts'>
+<option value='0.0'>Morning time</option>
+<option value='0.5'>evening time</option>
+<option value='1'>Night time</option>
+</select><br>
+<label>Number of adults:</label><br>
+<input type='numeric' placeholder='adult number' name='ano' required><br>
+<label>Determine weather:</label><br>
+<select placeholder='weather' name='wr'>
+<option value=''>Non favourable</option>
+<option value=''>Favourable</option>
+<option value=''>medium</option>
+</select><br>
+<label>Air conditioned hall?</label><br>
+<select placeholder='A/C or not' name='ac'>
+<option value=''>Yes</option>
+<option value=''>No</option>
+</select><br>
+<label>Number of children:</label><br>
+<input type='numeric' placeholder='children' name='cno' required><br>
+<label>holiday day</label><br>
+<select placeholder='holiday?' name='hd'>
+<option value=''>Yes</option>
+<option value=''>No</option>
+</select><br>
+<label>Variety of food</label><br>
+<select placeholder='variety' name='var'>
+<option value=''>Low</option>
+<option value=''>Medium</option>
+<option value=''>High</option>
+</select><br>
+<h4>Information about food articles:</h4><br>
+<label>Amount of chapatis:</label><br>
+<input type='numeric' placeholder='chapatis' name='ch' required><br>
+<label>Amount of rice:</label><br>
+<input type='numeric' placeholder='rice' name='rice' required><br>
+<label>Amount of daals:</label><br>
+<input type='numeric' placeholder='daals' name='daal' required><br>
+<label>Amount of vegetables:</label><br>
+<input type='numeric' placeholder='vegetables' name='veg' required><br>
+<button type="submit" class="btn">Predict</button>
+</form>
+</body>
+</html>
