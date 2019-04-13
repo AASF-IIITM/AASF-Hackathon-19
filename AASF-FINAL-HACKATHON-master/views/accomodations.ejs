@@ -1,0 +1,42 @@
+<% include partials/header1 %>
+
+	
+    <!-- Banner Area Starts -->
+    <section class="banner-area other-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Accomodations</h1>
+                    <a href="index.html">Home</a> <span>|</span> <a href="blog-home.html">Accomodations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Area End -->
+
+    <!-- Patient Area Starts -->
+    <section class="patient-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                <%accomodations.forEach(function(accomodation){ %>
+                    <div class="single-patient mb-4">
+                        <img src="<%=accomodation.image%>" alt="">
+                        <h3><%=accomodation.name%></h3>
+                        <h5><%=accomodation.city%></h5>
+                        <p class="pt-3"><a href="/accomodations/<%=accomodation._id%>" class="genric-btn success circle arrow">Know More<span class="lnr lnr-arrow-right"></span></a></p>
+                    </div>
+                <% }); %>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Patient Area Starts -->
+
+
+
+
+
+<% include partials/footer1 %>
+  
+

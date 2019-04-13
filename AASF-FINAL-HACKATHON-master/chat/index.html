@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+
+
+     /* #messages li:nth-child(odd) { background: #eee;
+     </style>
+  </head>
+  <body>
+  	<div>
+  		<ul id="messages"></ul>
+  		<form action="">
+	      <input id="m" autocomplete="off" /><button class="btn btn-sucess btn-large">Send</button>
+	    </form>
+  	</div>
+
+  	
+    
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	<script>
+
+		
+	 
+	  $(function () {
+	  
+			    // var socket = io();
+			    $('form').submit(function(e){
+			    	e.preventDefault(); // prevents page reloading
+				     var msg=$("#m").val();
+				     $('#messages').append($('<li class="human">').text(msg));
+
+				     
+				     var myVar = setTimeout(myTimer, 1500);
+				    function  myTimer()
+				     {
+
+				     	if(msg=='hi'||msg=='hello')
+				     	{
+				     		
+				     		$('#messages').append($('<li>').text("Hi There I am MediBot. "));
+					     	$('#messages').append($('<li>').text("Choose Among the following services: "));
+					     	$('#messages').append($('<li id="1">').text("1. Enter Your Symptoms to predict your disease"));
+					     	$('#messages').append($('<li id="2">').text("2. Check Your Health Status based on your personal information"));
+					     	$('#messages').append($('<li id="3">').text("3. Predict your Insurance cost Based on your current BMI,smoking habits, age etc"));
+					     	$('#messages').append($('<li id="4">').text("4. Check Your Eligibility for Ayush Bharat Scheme"));
+					     	$('#messages').append($('<li id="5">').text("5. Know your Hospitals in locality which come under this scheme"));
+
+
+					     	
+					     	var btn=document.createElement("button");
+					     	btn.className="btn btn-success btn-large";
+					     	document.getElementById("1").append(btn);
+
+
+				     	} 
+				     	else
+				     	{
+				     		$('#messages').append($('<li>').text("Wrong Input !!"));
+				     	}
+				     	
+
+				     	
+				     }
+				     
+
+
+
+					
+			    });
+			    
+			  });
+
+</script>
+	</script>
+  </body>
+</html>
