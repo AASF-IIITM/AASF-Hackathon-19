@@ -1,0 +1,124 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body{
+background:url('/static/akka.jpg');
+margin:0;
+}
+.header a,.dropdown{
+  top:0;
+  float: right;
+  text-align: center;
+  padding:16px;
+  background: rgba(0, 0, 0, 0); /* Black background with transparency */
+  text-decoration: none;
+  font-size: 200%;
+  color:666666	;
+  font-family:Arial, Helvetica, sans-serif;
+  overflow:hidden;
+}
+.header a:hover,.dropdown:hover .dropbtn {
+  color: 999999;
+}
+
+.header a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.footer{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align:center;
+
+}
+.footer font{
+float:left;
+right:100px;
+font-size:200%;
+color:666666;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.content{
+    position: absolute;
+    background: #F1F0F6; /* Black background with transparency */
+    text-align:center;
+    text-decoration-color: #1a1a1a;
+    tp:30%;
+    left:47%;
+    right:28%;
+    bottom:42%;
+    font-size:300%;
+
+}
+.dropdown .dropbtn {
+    font-size:100%;
+    border: none;
+    outline: none;
+    color:666666;
+    background-color:inherit;
+    font-family:inherit;
+    top:0;
+	float: right;
+    text-align: center;
+    padding:0;
+
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    float: none;
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size:50%;
+    padding:16px;
+
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+<title>Home</title>
+
+</head>
+<body>
+<div class='header'>
+<a href={{url_for("about")}}>About</a>
+<a href={{url_for("front")}}>Home</a>
+<a href={{url_for("login")}}>Login</a>
+<div class="dropdown">
+    <button class="dropbtn">Signup
+    </button>
+    <div class="dropdown-content">
+      <a href={{url_for("signup1")}}>caterer</a>
+      <a href={{url_for("orgsignup1")}}>organization</a>
+    </div>
+  </div>
+</div>
+<div class='content'>
+<h3>Solution for food wastage</h3>
+</div>
+<div class='footer'>
+<font>follow us on:</font>
+<i class="fa fa-facebook-square" style="font-size:48px;color:333399	"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<i class="fa fa-instagram" style="font-size:48px;color:FF6699"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<i class="fa fa-twitter" style="font-size:48px;color:3399FF"></i>
+
+
+</div>
+</body>
+</html>

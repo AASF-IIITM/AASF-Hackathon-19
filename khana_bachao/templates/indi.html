@@ -1,0 +1,167 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body{
+background:url('/static/akka.jpg');
+margin:0;
+}
+.header a,.dropdown{
+  top:0;
+  float: right;
+  text-align: center;
+  padding:16px;
+  background: rgba(0, 0, 0, 0); /* Black background with transparency */
+  text-decoration: none;
+  font-size: 200%;
+  color:666666	;
+  font-family:Arial, Helvetica, sans-serif;
+  overflow:hidden;
+}
+.header a:hover,.dropdown:hover .dropbtn {
+  color: 999999;
+}
+
+.header a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.footer{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align:center;
+
+}
+.footer font{
+float:left;
+right:100px;
+font-size:300%;
+color:666666;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.content{
+    position: absolute;
+    background: #F1F0F6; /* Black background with transparency */
+    text-align:center;
+    text-decoration-color: #1a1a1a;
+    tp:30%;
+    left:47%;
+    right:28%;
+    bottom:42%;
+    font-size:300%;
+
+}
+.dropdown .dropbtn {
+    font-size:100%;
+    border: none;
+    outline: none;
+    color:666666;
+    background-color:inherit;
+    font-family:inherit;
+    top:0;
+	float: right;
+    text-align: center;
+    padding:0;
+
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    float: none;
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size:50%;
+    padding:16px;
+
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.form{  font-family:Arial, Helvetica, sans-serif;
+        position: absolute;
+	    right: 0;
+	    top:30%;
+	    margin: 20px;
+	    max-width: 300px;
+	    padding: 16px;
+	    background-color: white;
+
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.btn {
+    background-color:CC9933;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+</style>
+<title>Login</title>
+
+</head>
+<body>
+
+<!--ABHI OTP DALA NAI HAI.... IS PAGE PE DALEGA-->
+
+
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+{%if session['donationmade']==False%}
+      <strong>OTP VERIFIED</strong>
+{%else%}
+      <strong>Nearby NGO's Have been Notified about Food Availablity Successfully </strong>
+{%endif%}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+<div class='content'>
+<h1><strong>Solution for food wastage </strong></h1>
+</div>
+
+<div class='form'>
+<h1>Choose :</h1>
+<br>
+<form  action="{{url_for('indi1')}}"  >
+      <button type="submit" value='p' name='choice' class="btn">PREDICT REQ. FOOD </button>
+
+      <br><br><br>
+      <button type="submit" value='d' name='choice' class="btn">DONATE</button>
+</form>
+</div>
+</body>
+</html>
