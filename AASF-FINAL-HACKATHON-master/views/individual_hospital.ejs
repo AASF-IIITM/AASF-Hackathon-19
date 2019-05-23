@@ -1,0 +1,44 @@
+<% include partials/header1 %>
+    <!-- Patient Area Starts -->
+    <section class="patient-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-top text-center">
+                        <h2><%=hospital.name%></h2>
+                        <p><%=hospital.city%></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="single-patient mb-4">
+                        <img src="<%=hospital.image%>" alt="">
+                        <h3><%=hospital.name%></h3>
+                        <h5><%=hospital.address%></h5>
+                        <h5><%=hospital.city%></h5>
+                        <h5><%=hospital.email%></h5>
+                        <h5><%=hospital.contact%></h5>
+                        <% if(!currentUser){ %>
+                        <%  }else if(currentUser.isAdmin){ %>
+                        <p><form method="GET"  action="/hospitals/edit/<%= hospital._id %>">
+								<button class="genric-btn success circle arrow">Edit</button>
+							</form>
+						</p>
+						<p><form method="POST" action="/hospitals/<%=hospital._id%>?_method=DELETE">
+								<button class="genric-btn success circle arrow">Delete</button>
+							</form>
+						</p>
+          				<%  }else{ %>
+                        <p><form method="GET"  action="/hospitals/edit/book/<%= hospital._id %>">
+                                <button class="genric-btn success circle arrow">Book Appointment</button>
+                            </form>
+                        </p>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Patient Area Starts -->
+<% include partials/footer1 %>
